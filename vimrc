@@ -8,9 +8,16 @@ set number
 
 "Плигины
 call plug#begin('~/.vim/plugged')
-Plug 'ErichDonGubler/vim-sublime-monokai'
+"Plug 'ErichDonGubler/vim-sublime-monokai'
+Plug 'flazz/vim-colorschemes'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-colorscheme-switcher'
 Plug 'scrooloose/nerdtree' 
 call plug#end()
+
+colorscheme up 
+
+set t_ut=""
 
 "Хоткеи для петухона
 imap <F5> <Esc>:w<CR>:!clear;python3 %<CR>
@@ -25,7 +32,7 @@ nnoremap <C-n> :NERDTree<CR>
 
 let NERDTreeQuitOnOpen=1
 
-colorscheme sublimemonokai "Цветовая схема
+"colorscheme sublimemonokai "Цветовая схема
 
 set timeoutlen=1000 ttimeoutlen=0 "Задержки при visual block insetr
 
