@@ -1,0 +1,12 @@
+#!/bin/bash
+
+path=~/code/git/my/myConfigs #Path to local repo
+
+cd $path 
+
+echo 'Введи коменратий к коммиту'
+read comment 
+
+git add . 
+git commit -m "Обновляем конфиги $comment"
+git push origin master
