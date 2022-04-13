@@ -227,7 +227,7 @@ tmux_conf_theme_right_separator_sub="|"
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left=" ❐ #S "
-tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root}"
+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username} #{root}"
 
 # status left style
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
@@ -334,8 +334,8 @@ tmux_conf_copy_to_os_clipboard=false
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
-#set -g status-keys vi
-#set -g mode-keys vi
+set -g status-keys vi
+set -g mode-keys vi
 
 # replace C-b by C-a instead of using both prefixes
 # set -gu prefix2
@@ -416,3 +416,22 @@ tmux_conf_uninstall_plugins_on_reload=true
 #
 # "$@"
 # # /!\ do not remove the previous line
+
+
+# My
+
+## copy mode : vim ####
+
+# set vi mode for copy mode
+setw -g mode-keys vi
+
+# copy mode using 'Esc'
+unbind [
+bind Escape copy-mode
+
+# start selection with 'space' and copy using 'y'
+#bind -t vi-copy 'y' copy-selection
+
+# paste using 'p'
+unbind p
+bind p paste-buffer
