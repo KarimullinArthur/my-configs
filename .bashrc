@@ -147,6 +147,10 @@ alias ssh="kitty +kitten ssh"
 #Дефолтный редактор - вим
 export EDITOR=vim
 
+#ipdb & pdb
+alias pdb="python3 -m pdb"
+alias ipdb="python3 -m ipdb"
+
 # du
 alias du="du -h"
 
