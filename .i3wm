@@ -188,7 +188,7 @@ default_border pixel 1
 default_floating_border pixel 1
 
 #lang
-exec setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle"
+exec setxkbmap "us,ru" ",winkeys" "grp:caps_toggle"
 
 #WallPaper
 
