@@ -133,6 +133,13 @@ fi
 #Фикс запуска tmux alias
 #tmux="TERM=xterm && tmux" 
 
+#Vi mode
+set -o vi
+
+set -o vi
+bind -m vi-command 'Control-l: clear-screen'
+bind -m vi-insert 'Control-l: clear-screen'
+
 alias emacs="emacs -nw"
 
 alias w3m="w3m -o auto_image=FALSE"
