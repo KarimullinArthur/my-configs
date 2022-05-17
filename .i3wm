@@ -184,7 +184,7 @@ bar {
 #borders
 bindsym $mod+t border toggle
 
-default_border pixel 1
+default_border pixel 1 
 default_floating_border pixel 1
 
 #lang
