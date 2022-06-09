@@ -1,6 +1,6 @@
 #!/bin/bash
 
-path=~/code/gitRepo/my/myConfigs #Path to local repo
+path=~/.config/myConfigs #Path to local repo
 
 cd $path 
 
@@ -9,4 +9,4 @@ read comment
 
 git add . 
 git commit -m "Обновляем конфиги $comment"
-git push origin termux r
+git push origin termux 
