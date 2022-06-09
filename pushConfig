@@ -9,4 +9,4 @@ read comment
 
 git add . 
 git commit -m "Обновляем конфиги $comment"
-git push termux master
+git push origin termux r
