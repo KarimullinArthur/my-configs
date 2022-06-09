@@ -36,7 +36,7 @@ let NERDTreeQuitOnOpen=1
 
 set timeoutlen=1000 ttimeoutlen=0 "Задержки при visual block insetr
 
-set keymap=russian-jcukenwin
-set iminsert=0 
-set imsearch=0 
-inoremap <C-l> <C-^>
+"set keymap=russian-jcukenwin
+"set iminsert=0 
+"set imsearch=0 
+"inoremap <C-l> <C-^>

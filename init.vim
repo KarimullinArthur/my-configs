@@ -7,6 +7,10 @@ set tabstop=4
 set number
 
 "Плигины
+"Ссылка на установку
+"h -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+"       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 call plug#begin('~/.vim/plugged')
 "Plug 'ErichDonGubler/vim-sublime-monokai'
 Plug 'flazz/vim-colorschemes'
@@ -20,8 +24,8 @@ colorscheme up
 set t_ut=""
 
 "Хоткеи для петухона
-imap <F5> <Esc>:w<CR>:!clear;python3 %<CR>
-nmap  <F5> <Esc>:w<CR>:!clear;python3 %<CR>
+imap <F5> <Esc>:w<CR>:term python3 %<CR>
+nmap  <F5> <Esc>:w<CR>:term python3 %<CR>
 
 cnoreabbrev python !clear;python3 %
 
