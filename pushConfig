@@ -7,6 +7,7 @@ cd $path
 echo 'Введи коменратий к коммиту'
 read comment 
 
+git switch termux
 git add . 
 git commit -m "Обновляем конфиги $comment"
 git push origin termux 
