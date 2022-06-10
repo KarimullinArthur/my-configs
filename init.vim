@@ -12,13 +12,13 @@ set number
 "       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 call plug#begin('~/.vim/plugged')
-"Plug 'ErichDonGubler/vim-sublime-monokai'
 Plug 'flazz/vim-colorschemes'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'scrooloose/nerdtree' 
 call plug#end()
 
+"Цветовая схема
 colorscheme up 
 
 set t_ut=""
@@ -35,8 +35,6 @@ nnoremap <C-n> :NERDTree<CR>
 "nnoremap <C-f> :NERDTreeFind<CR>
 
 let NERDTreeQuitOnOpen=1
-
-"colorscheme sublimemonokai "Цветовая схема
 
 set timeoutlen=1000 ttimeoutlen=0 "Задержки при visual block insetr
 
