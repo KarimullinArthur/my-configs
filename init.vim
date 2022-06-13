@@ -1,6 +1,7 @@
 set encoding=utf-8 "Ставит кодировку UTF-8
 
 au Filetype python setl et ts=4 sw=4
+au Filetype html setl ts=2 sw=2
 
 set tabstop=4
 
@@ -25,9 +26,9 @@ set t_ut=""
 
 "Хоткеи для петухона
 imap <F5> <Esc>:w<CR>:term python3 %<CR>
-nmap  <F5> <Esc>:w<CR>:term python3 %<CR>
+nmap <F5> <Esc>:w<CR>:term python3 %<CR>
 
-cnoreabbrev python !clear;python3 %
+cnoreabbrev python :term python3 %
 
 "nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>

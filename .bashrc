@@ -130,8 +130,6 @@ fi
 #| |  | | |_| |
 #|_|  |_|\__, |
 #        |___/ 
-#Фикс запуска tmux alias
-#tmux="TERM=xterm && tmux" 
 
 #Vi mode
 set -o vi
@@ -155,7 +153,7 @@ export PATH=~/bin:"$PATH"
 alias ssh="kitty +kitten ssh"
 
 #Дефолтный редактор - вим
-export EDITOR=vim
+export EDITOR=nvim
 
 #ipdb & pdb
 alias pdb="python3 -m pdb"
