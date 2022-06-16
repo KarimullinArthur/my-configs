@@ -193,11 +193,15 @@ bar {
     }
 }
 
+#auto
+exec kitty
+#for_window [instance="kitty"] 
+
 #borders
 bindsym $mod+t border toggle
 
-default_border pixel 1 
-default_floating_border pixel 1
+default_border pixel 0  
+default_floating_border pixel 0 
 
 #lang
 exec setxkbmap "us,ru" ",winkeys" "grp:caps_toggle"
