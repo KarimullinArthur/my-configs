@@ -34,12 +34,13 @@ alias emacs="emacs -nw"
 
 alias w3m="w3m -o auto_image=FALSE"
 alias w3m-image="w3m -o auto_image=TRUE"
+alias get="termux-clipboard-get"
 
 #Добавляем свой /bin в домашней директории
 export PATH=~/bin:"$PATH" 
 
-#Дефолтный редактор - вим
-export EDITOR=vim
+#Дефолтный редактор - neovim
+export EDITOR=nvim
 
 #ipdb & pdb
 alias pdb="python3 -m pdb"

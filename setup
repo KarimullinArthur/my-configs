@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+mkdir ~/.config/nvim
+cd ~/.config/nvim/
+ln -s ~/.config/myConfigs/init.vim
+
+cd ~/
+ln -s ~/.config/myConfigs/.bashrc

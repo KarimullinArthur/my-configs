@@ -1,7 +1,7 @@
 set encoding=utf-8 "Ставит кодировку UTF-8
 
 au Filetype python setl et ts=4 sw=4
-
+au Filetype txt set et ts=4 sw=4
 set tabstop=4
 
 set number
