@@ -143,19 +143,21 @@ bind -m vi-command '"\C-i":complete'
 #Алиасы
 alias emacs="emacs -nw"
 
-alias w3m="w3m -o auto_image=FALSE"
-alias w3m-image="w3m -o auto_image=TRUE"
+#alias w3m="w3m -o auto_image=FALSE"
+#alias w3m-image="w3m -o auto_image=TRUE"
 
-alias icat="kitty +kitten icat"
+#alias icat="kitty +kitten icat"
 
 #Добавляем свой /bin в домашней директории
-export PATH=~/bin:"$PATH" 
+export PATH=~/bin:/sbin:/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/games
+#export PATH=~/bin:"$PATH" 
+#export PATH=/usr/games/lolcat:"$PATH" 
 
 #Китти в ссш
-alias ssh="kitty +kitten ssh"
+#alias ssh="kitty +kitten ssh"
 
 #Дефолтный редактор - вим
-export EDITOR=nvim
+export EDiTOR=nvim
 
 #ipdb & pdb
 alias pdb="python3 -m pdb"
@@ -164,5 +166,9 @@ alias ipdb="python3 -m ipdb"
 # du
 alias du="du -h"
 
+alias mocp="mocp -T ~/.moc/themes/black_theme ."
+
 #Забавы ради
 figlet Linux  Is  POWER | lolcat
+
+. "$HOME/.cargo/env"

@@ -9,14 +9,15 @@ set number
 
 "Плигины
 "Ссылка на установку
-"h -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-"       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+"        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 call plug#begin('~/.vim/plugged')
 Plug 'flazz/vim-colorschemes'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'scrooloose/nerdtree' 
+Plug 'KabbAmine/zeavim.vim'
 call plug#end()
 
 "Цветовая схема
@@ -28,7 +29,7 @@ set t_ut=""
 imap <F5> <Esc>:w<CR>:term python3 %<CR>
 nmap <F5> <Esc>:w<CR>:term python3 %<CR>
 
-cnoreabbrev python :term python3 %
+cnoreabbrev py :term python3 %
 
 "nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -41,3 +42,11 @@ set keymap=russian-jcukenwin
 set iminsert=0 
 set imsearch=0 
 inoremap <C-l> <C-^>
+
+
+" Docs
+
+nmap <leader>z <Plug>Zeavim
+vmap <leader>z <Plug>ZVVisSelection
+nmap gz <Plug>ZVOperator
+nmap <leader><leader>z <Plug>ZVKeyDocset

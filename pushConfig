@@ -1,6 +1,6 @@
 #!/bin/bash
 
-path=~/code/gitRepo/my/myConfigs #Path to local repo
+path=~/.config/myConfigs #Path to local repo
 
 cd $path 
 
