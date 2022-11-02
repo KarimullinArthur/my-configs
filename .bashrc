@@ -51,3 +51,4 @@ alias du="du -h"
 
 #Забавы ради
 figlet Termux 
+. "$HOME/.cargo/env"
