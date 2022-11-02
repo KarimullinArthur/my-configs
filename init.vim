@@ -29,7 +29,7 @@ set t_ut=""
 imap <F5> <Esc>:w<CR>:term python3 %<CR>
 nmap <F5> <Esc>:w<CR>:term python3 %<CR>
 
-cnoreabbrev py :term python3 %
+cnoreabbrev pyt :term python3 %
 
 "nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
