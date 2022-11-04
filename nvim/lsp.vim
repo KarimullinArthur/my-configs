@@ -1,5 +1,3 @@
-" LSP
-
 lua << EOF
 
 -- Mappings.
@@ -43,17 +41,4 @@ local lsp_flags = {
 require('lspconfig')['pylsp'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
-}
-
-require'lspconfig'.pylsp.setup{
-  settings = {
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          ignore = {'W391'},
-          maxLineLength = 100
-        }
-      }
-    }
-  }
 }
