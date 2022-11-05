@@ -31,6 +31,7 @@ bind -m vi-command '"\C-i":complete'
 
 #Алиасы
 alias emacs="emacs -nw"
+alias nvim="nvim -u ~/.config/nvim/init.vim"
 
 alias w3m="w3m -o auto_image=FALSE"
 alias w3m-image="w3m -o auto_image=TRUE"
