@@ -43,7 +43,7 @@ Plug 'hrsh7th/vim-vsnip'
 
 Plug 'scrooloose/nerdtree' 
 
-Plug 'flazz/vim-colorschemes'
+"Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
 "Plug 'xolox/vim-colorscheme-switcher'
 call plug#end()
@@ -79,4 +79,4 @@ set iminsert=0 " Set defualt qwerty
 source ~/.config/nvim/cmp.vim
 
 " LSP
-"source ~/.config/nvim/lsp.vim
+source ~/.config/nvim/lsp.vim
