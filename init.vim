@@ -45,8 +45,7 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-colorscheme-switcher'
+"Plug 'xolox/vim-colorscheme-switcher'
 call plug#end()
 
 " Цветовая схема
