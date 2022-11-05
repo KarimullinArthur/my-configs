@@ -3,12 +3,22 @@ set encoding=utf-8
 set number
 set fileformat=unix
 
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+
+set smartindent
+set tabstop=2
+set expandtab
+set shiftwidth=2
+
 au Filetype python setl et ts=4 sw=4
 au Filetype html setl ts=2 sw=2
 
-set tabstop=4
-
 nnoremap ,<space> :nohlsearch<CR>
+autocmd FileType python set colorcolumn=79
 
 " Плигины
 " Ссылка на установку
@@ -44,8 +54,6 @@ call plug#end()
 "colorscheme up 
 colorscheme gruvbox
 
-set t_ut=""
-
 " Хоткеи для петухона
 imap <F5> <Esc>:w<CR>:term python3 %<CR>
 nmap <F5> <Esc>:w<CR>:term python3 %<CR>
@@ -59,15 +67,17 @@ nnoremap <C-n> :NERDTree<CR>
 
 let NERDTreeQuitOnOpen=1
 
+" йцукен
 set keymap=russian-jcukenwin
-set iminsert=0 
-set imsearch=0 
 inoremap <C-l> <C-^>
 
 
-" CMP
-" Ctrl + Space for activate
+"nmap <F9> <Esc>:source ~/.config/nvim/cmp.vim<CR>
+
+
+" CMP & LSP
+" Ctrl + Space for activate cmp
 source ~/.config/nvim/cmp.vim
 
 " LSP
-source ~/.config/nvim/lsp.vim
+"source ~/.config/nvim/lsp.vim
