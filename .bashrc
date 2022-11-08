@@ -30,6 +30,11 @@ bind -m vi-command '"\C-i":complete'
 bind -m vi-command '"\C-i":complete'
 
 #Алиасы
+
+alias pg-start="pg_ctl -D $PREFIX/var/lib/postgresql start"
+alias pg-stop="pg_ctl -D $PREFIX/var/lib/postgresql stop"
+
+
 alias emacs="emacs -nw"
 
 alias w3m="w3m -o auto_image=FALSE"
