@@ -2,6 +2,7 @@ set mouse=a
 set encoding=utf-8 
 set number
 set fileformat=unix
+set noswapfile
 
 set tabstop=4
 set softtabstop=4
@@ -41,6 +42,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
+Plug 'Pocco81/auto-save.nvim'
 Plug 'scrooloose/nerdtree' 
 
 Plug 'flazz/vim-colorschemes'
@@ -69,14 +71,19 @@ let NERDTreeQuitOnOpen=1
 " йцукен
 set keymap=russian-jcukenwin
 inoremap <C-l> <C-^>
-
+set iminsert=0 " Set defualt qwerty
 
 "nmap <F9> <Esc>:source ~/.config/nvim/cmp.vim<CR>
 
+"source ~/.config/nvim/python.vim
 
 " CMP & LSP
 " Ctrl + Space for activate cmp
 source ~/.config/nvim/cmp.vim
 
 " LSP
-"source ~/.config/nvim/lsp.vim
+source ~/.config/nvim/lsp.vim
+
+" Auto save
+
+source ~/.config/nvim/auto-save.vim

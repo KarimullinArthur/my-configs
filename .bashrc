@@ -157,7 +157,7 @@ export PATH=~/bin:/sbin:/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:/
 #alias ssh="kitty +kitten ssh"
 
 #Дефолтный редактор - вим
-export EDiTOR=nvim
+export EDITOR=nvim
 
 #ipdb & pdb
 alias pdb="python3 -m pdb"
@@ -168,7 +168,13 @@ alias du="du -h"
 
 alias mocp="mocp -T ~/.moc/themes/black_theme ."
 
+
+# autostart tmux
+tmux >> /dev/null 2>&1  
+
 #Забавы ради
 figlet Linux  Is  POWER | lolcat
 
 . "$HOME/.cargo/env"
+
+
