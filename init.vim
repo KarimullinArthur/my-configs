@@ -21,6 +21,23 @@ au Filetype html setl ts=2 sw=2
 nnoremap ,<space> :nohlsearch<CR>
 autocmd FileType python set colorcolumn=79
 
+" Хоткеи для петухона
+imap <F5> <Esc>:w<CR>:term python3 %<CR>
+nmap <F5> <Esc>:w<CR>:term python3 %<CR>
+
+cnoreabbrev pyt :term python3 %
+
+
+" йцукен
+set keymap=russian-jcukenwin
+inoremap <C-l> <C-^>
+set iminsert=0 " Set defualt qwerty
+
+
+" tabs
+nnoremap <silent> tn <Cmd>:tabnext<CR>
+nnoremap <silent> tp <Cmd>:tabprevious <CR>
+
 " Плигины
 " Ссылка на установку
 " sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -43,9 +60,10 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
 Plug 'Pocco81/auto-save.nvim'
+"Plug 'nanozuki/tabby.nvim'
 Plug 'scrooloose/nerdtree' 
 
-Plug 'flazz/vim-colorschemes'
+"Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
 "Plug 'xolox/vim-colorscheme-switcher'
 call plug#end()
@@ -55,23 +73,14 @@ call plug#end()
 "colorscheme up 
 colorscheme gruvbox
 
-" Хоткеи для петухона
-imap <F5> <Esc>:w<CR>:term python3 %<CR>
-nmap <F5> <Esc>:w<CR>:term python3 %<CR>
 
-cnoreabbrev pyt :term python3 %
-
-"nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-"nnoremap <C-t> :NERDTreeToggle<CR>
-"nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <leader>n :NERDTreeFocus<CR>
+"nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 let NERDTreeQuitOnOpen=1
 
-" йцукен
-set keymap=russian-jcukenwin
-inoremap <C-l> <C-^>
-set iminsert=0 " Set defualt qwerty
 
 "nmap <F9> <Esc>:source ~/.config/nvim/cmp.vim<CR>
 
@@ -85,5 +94,4 @@ source ~/.config/nvim/cmp.vim
 source ~/.config/nvim/lsp.vim
 
 " Auto save
-
 source ~/.config/nvim/auto-save.vim
