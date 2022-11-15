@@ -73,7 +73,9 @@ call plug#end()
 " Цветовая схема
 
 "colorscheme up 
-colorscheme gruvbox-baby
+
+let g:gruvbox_italic = 1
+colorscheme gruvbox
 
 
 nnoremap <leader>n :NERDTreeFocus<CR>
