@@ -64,6 +64,8 @@ Plug 'Pocco81/auto-save.nvim'
 Plug 'scrooloose/nerdtree' 
 
 "Plug 'flazz/vim-colorschemes'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 Plug 'morhetz/gruvbox'
 "Plug 'xolox/vim-colorscheme-switcher'
 call plug#end()
@@ -71,27 +73,25 @@ call plug#end()
 " Цветовая схема
 
 "colorscheme up 
-colorscheme gruvbox
+colorscheme gruvbox-baby
 
 
 nnoremap <leader>n :NERDTreeFocus<CR>
-"nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 let NERDTreeQuitOnOpen=1
 
 
-"nmap <F9> <Esc>:source ~/.config/nvim/cmp.vim<CR>
-
-"source ~/.config/nvim/python.vim
-
 " CMP & LSP
 " Ctrl + Space for activate cmp
-source ~/.config/nvim/cmp.vim
+source ~/.config/nvim/cmp.lua
+set completeopt=menu,menuone,noselect
 
 " LSP
-source ~/.config/nvim/lsp.vim
+source ~/.config/nvim/lsp.lua
 
 " Auto save
-source ~/.config/nvim/auto-save.vim
+source ~/.config/nvim/auto-save.lua
+
+source ~/.config/nvim/treesitter.lua

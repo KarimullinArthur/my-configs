@@ -1,4 +1,3 @@
-lua << EOF
 require("auto-save").setup({
         enabled = true,
             execution_message = {
@@ -20,4 +19,3 @@ require("auto-save").setup({
         clean_command_line_interval = 0,
         debounce_delay = 135,
 })
-EOF
