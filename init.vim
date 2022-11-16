@@ -15,6 +15,8 @@ set tabstop=2
 set expandtab
 set shiftwidth=2
 
+:set iskeyword-=_
+
 au Filetype python setl et ts=4 sw=4
 au Filetype html setl ts=2 sw=2
 
