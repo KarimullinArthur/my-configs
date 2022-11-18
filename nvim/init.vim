@@ -15,7 +15,7 @@ set tabstop=2
 set expandtab
 set shiftwidth=2
 
-:set iskeyword-=_
+set iskeyword-=_
 
 au Filetype python setl et ts=4 sw=4
 au Filetype html setl ts=2 sw=2
@@ -52,7 +52,6 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
 
-
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -62,12 +61,17 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
 Plug 'Pocco81/auto-save.nvim'
-"Plug 'nanozuki/tabby.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'scrooloose/nerdtree' 
+Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+"Plug 'nvim-tree/nvim-tree.lua'
 
 "Plug 'flazz/vim-colorschemes'
+Plug 'glepnir/dashboard-nvim'
+"Plug 'mhinz/vim-startify'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
+"Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 Plug 'morhetz/gruvbox'
 "Plug 'xolox/vim-colorscheme-switcher'
 call plug#end()
@@ -79,6 +83,11 @@ call plug#end()
 let g:gruvbox_italic = 1
 colorscheme gruvbox
 
+" Find files using Telescope command-line sugar.
+nnoremap ,ff <cmd>Telescope find_files<cr>
+nnoremap ,fg <cmd>Telescope live_grep<cr>
+nnoremap ,fb <cmd>Telescope buffers<cr>
+nnoremap ,fh <cmd>Telescope help_tags<cr>
 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -86,6 +95,9 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 let NERDTreeQuitOnOpen=1
 
+
+" Main init in lua
+source ~/.config/nvim/main.lua
 
 " CMP & LSP
 " Ctrl + Space for activate cmp
@@ -95,7 +107,11 @@ set completeopt=menu,menuone,noselect
 " LSP
 source ~/.config/nvim/lsp.lua
 
+" Telescope
+source ~/.config/nvim/telescope.lua
+
 " Auto save
 source ~/.config/nvim/auto-save.lua
 
+" Treesitter
 source ~/.config/nvim/treesitter.lua
