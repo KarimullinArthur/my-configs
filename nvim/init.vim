@@ -40,6 +40,8 @@ set iminsert=0 " Set defualt qwerty
 nnoremap <silent> tn <Cmd>:tabnext<CR>
 nnoremap <silent> tp <Cmd>:tabprevious <CR>
 
+set guifont=AgaveMono\ Nerd\ Font\ 11
+
 " Плигины
 " Ссылка на установку
 " sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -64,12 +66,13 @@ Plug 'Pocco81/auto-save.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'scrooloose/nerdtree' 
-Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 "Plug 'nvim-tree/nvim-tree.lua'
 
 "Plug 'flazz/vim-colorschemes'
-Plug 'glepnir/dashboard-nvim'
+"Plug 'glepnir/dashboard-nvim'
 "Plug 'mhinz/vim-startify'
+Plug 'echasnovski/mini.nvim'
+Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 Plug 'morhetz/gruvbox'
@@ -82,6 +85,7 @@ call plug#end()
 
 let g:gruvbox_italic = 1
 colorscheme gruvbox
+
 
 " Find files using Telescope command-line sugar.
 nnoremap ,ff <cmd>Telescope find_files<cr>
