@@ -43,9 +43,13 @@ nnoremap <silent> tp <Cmd>:tabprevious <CR>
 set guifont=AgaveMono\ Nerd\ Font\ 11
 
 " Плигины
-" Ссылка на установку
-" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-"        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim')) "Если vim-plug не стоит
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs "Создать директорию
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
+  "И скачать его оттуда
+  "А после прогнать команду PlugInstall, о которой мы сейчас поговорим
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'neovim/nvim-lspconfig'
