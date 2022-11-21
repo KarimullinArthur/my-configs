@@ -46,12 +46,11 @@ set guifont=AgaveMono\ Nerd\ Font\ 11
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim')) "Если vim-plug не стоит
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs "Создать директорию
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
-  "И скачать его оттуда
-  "А после прогнать команду PlugInstall, о которой мы сейчас поговорим
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -69,23 +68,15 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'Pocco81/auto-save.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-Plug 'scrooloose/nerdtree' 
-"Plug 'nvim-tree/nvim-tree.lua'
+Plug 'scrooloose/nerdtree'
 
-"Plug 'flazz/vim-colorschemes'
-"Plug 'glepnir/dashboard-nvim'
-"Plug 'mhinz/vim-startify'
 Plug 'echasnovski/mini.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-"Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 Plug 'morhetz/gruvbox'
-"Plug 'xolox/vim-colorscheme-switcher'
 call plug#end()
 
 " Цветовая схема
-
-"colorscheme up 
 
 let g:gruvbox_italic = 1
 colorscheme gruvbox
@@ -102,7 +93,33 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
 
+" Function to open the file or NERDTree or netrw.
+"   Returns: 1 if either file explorer was opened; otherwise, 0.
+function! s:OpenFileOrExplorer(...)
+    if a:0 == 0 || a:1 == ''
+        NERDTree
+    elseif filereadable(a:1)
+        execute 'edit '.a:1
+        return 0
+    elseif a:1 =~? '^\(scp\|ftp\)://' " Add other protocols as needed.
+        execute 'Vexplore '.a:1
+    elseif isdirectory(a:1)
+        execute 'NERDTree '.a:1
+    endif
+    return 1
+endfunction
+
+" Auto commands to handle OS commandline arguments
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc()==1 && !exists('s:std_in') | if <SID>OpenFileOrExplorer(argv()[0]) | wincmd p | enew | wincmd p | endif | endif
+
+" Command to call the OpenFileOrExplorer function.
+command! -n=? -complete=file -bar Edit :call <SID>OpenFileOrExplorer('<args>')
+
+" Command-mode abbreviation to replace the :edit Vim command.
+cnoreabbrev e Edit
 
 " Main init in lua
 source ~/.config/nvim/main.lua
