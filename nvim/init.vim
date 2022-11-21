@@ -46,8 +46,6 @@ set guifont=AgaveMono\ Nerd\ Font\ 11
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim')) "Если vim-plug не стоит
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs "Создать директорию
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
-  "И скачать его оттуда
-  "А после прогнать команду PlugInstall, о которой мы сейчас поговорим
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -72,15 +70,10 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'scrooloose/nerdtree' 
 "Plug 'nvim-tree/nvim-tree.lua'
 
-"Plug 'flazz/vim-colorschemes'
-"Plug 'glepnir/dashboard-nvim'
-"Plug 'mhinz/vim-startify'
 Plug 'echasnovski/mini.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-"Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 Plug 'morhetz/gruvbox'
-"Plug 'xolox/vim-colorscheme-switcher'
 call plug#end()
 
 " Цветовая схема
