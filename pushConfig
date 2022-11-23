@@ -16,3 +16,5 @@ git switch neovim
 git add nvim
 git commit -m "Обновляем конфиги $comment"
 git push origin neovim
+
+git switch master
