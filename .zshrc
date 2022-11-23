@@ -14,7 +14,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme agnoster
 
 antigen apply If you come from bash you might have to change your $PATH.
-#export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 #export PATH=~/bin:/sbin:/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/games
 # General
 set -o vi 
