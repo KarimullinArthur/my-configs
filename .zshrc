@@ -19,5 +19,9 @@ export PATH=~/bin:/sbin:/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:/
 # General
 set -o vi 
 
+# auto login on tty
+
+source ~/.zsh/auto_login_tty.zsh
+
 # Fun
 figlet "Linux is POWER" | lolcat
