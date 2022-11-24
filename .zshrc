@@ -9,6 +9,7 @@ antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
+antigen bundle postgres
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen theme agnoster
