@@ -69,6 +69,7 @@ Plug 'Pocco81/auto-save.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'scrooloose/nerdtree'
+Plug 'michaelb/sniprun'
 
 Plug 'echasnovski/mini.nvim'
 Plug 'ryanoasis/vim-devicons'
@@ -81,6 +82,8 @@ call plug#end()
 let g:gruvbox_italic = 1
 colorscheme gruvbox
 
+set cursorline
+set cursorlineopt=number
 
 " Find files using Telescope command-line sugar.
 nnoremap ,ff <cmd>Telescope find_files<cr>
