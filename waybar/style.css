@@ -88,8 +88,8 @@ tooltip label {
 }
 
 #clock {
-    background-color: /*#98971a;*/ #ff5555;
-    color: /*#0d0e0f;*/ #282a36;
+    background-color: #98971a;
+    color: #0d0e0f;
     margin-bottom: 10;
 }
 

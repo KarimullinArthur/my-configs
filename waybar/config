@@ -5,7 +5,9 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
-    "modules-center": ["clock"],
+    "modules-center": [
+      "clock",
+      ],
     "modules-right": ["pulseaudio", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "tray"],
 
     "keyboard-state": {
@@ -60,4 +62,5 @@
             "default": ["", "", ""]
         },
     }
+    
 }
