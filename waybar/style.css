@@ -57,18 +57,13 @@ tooltip label {
 }
 
 #clock,
-#battery,
 #cpu,
 #memory,
-#disk,
 #temperature,
-#backlight,
-#network,
 #pulseaudio,
 #custom-weather,
 #tray,
 #mode,
-#idle_inhibitor,
 #custom-notification,
 #sway-scratchpad,
 #mpd {
@@ -93,14 +88,9 @@ tooltip label {
 }
 
 #clock {
-    background-color: #ff5555;
-    color: #282a36;
+    background-color: /*#98971a;*/ #ff5555;
+    color: /*#0d0e0f;*/ #282a36;
     margin-bottom: 10;
-}
-
-#battery {
-    background-color: #44475a;
-    color: #f8f8f2;
 }
 
 
@@ -202,12 +192,6 @@ label:focus {
 
 #keyboard-state > label.locked {
     background: rgba(0, 0, 0, 0.2);
-}
-
-#custom-weather {
-    background-color: #8be9fd;
-    color: #282a36;
-    margin-right: 5;
 }
 
 #sway-scratchpad {
