@@ -9,3 +9,4 @@ ln -s ~/.config/myConfigs/tmux/.tmux.conf.local
 cd ~/.config
 
 ln -s ~/.config/myConfigs/sway
+ln -s ~/.config/myConfigs/waybar
