@@ -1,0 +1,4 @@
+#!/bin/sh
+
+
+postgres -D $PREFIX/var/lib/postgresql > /dev/null 2>&1 &
