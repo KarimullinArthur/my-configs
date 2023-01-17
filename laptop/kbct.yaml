@@ -1,19 +1,15 @@
- # Apply this configuration to two keyboards (if connected)
 - keyboards: ["AT Translated Set 2 keyboard"]
 
   keymap:
     capslock: backspace
     backspace: capslock
-    context_menu: capslock
-    compose: rightmeta
-  # Specify layered configurations (much similar to fn+F keys)
+    sysrq: rightmeta
   layers:
-    # Specify the modifiers of the layer
     - modifiers: ['rightshift']
       keymap:
         capslock: capslock
 
     - modifiers: ['leftshift']
       keymap:
-        compose: compose
-        backspace: backspace
+        backspace: backspace,
+        sysqr: sysqr

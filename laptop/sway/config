@@ -23,11 +23,6 @@ set $menu rofi -show run
 include /etc/sway/config-vars.d/*
 
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-
-
-#!/bin/sh
 
 output '*' bg `find ~/img/wallpapers -type f | shuf -n 1` fill
 
@@ -42,10 +37,9 @@ output '*' bg `find ~/img/wallpapers -type f | shuf -n 1` fill
 #
 # Example configuration:
 #
-exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
+# exec swayidle -w timeout 3 'swaylock -f -c 000001' 
+#         timeout 5 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+##         before-sleep 'swaylock -f -c 000001'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -227,8 +221,8 @@ exec foot
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-# Border
 
+# Border
 bindsym $mod+t border toggle
 
 default_border pixel 0  
@@ -236,4 +230,8 @@ default_floating_border pixel 0
 
 # Screenshot
 bindsym Print exec grim ~/img/screen-"$(date +%s)".png
-bindsym $mod+Print exec grim -g "$(slurp)" ~/img/screen-"$(date +%s)".png
+bindsym Shift+Print exec grim -g "$(slurp)" ~/img/screen-"$(date +%s)".png
+
+# Sleep
+bindsym $mod + Shift + s exec swaylock -c '000001' 
+#bindsym $mod +  execswaymsg "output * dpms on" 
