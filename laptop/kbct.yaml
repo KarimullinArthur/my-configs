@@ -11,5 +11,5 @@
 
     - modifiers: ['leftshift']
       keymap:
-        backspace: backspace,
-        sysqr: sysqr
+        backspace: backspace
+        sysrq: sysrq
