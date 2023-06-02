@@ -1,0 +1,15 @@
+- keyboards: ["AT Translated Set 2 keyboard"]
+
+  keymap:
+    capslock: backspace
+    backspace: capslock
+    sysrq: rightmeta
+  layers:
+    - modifiers: ['rightshift']
+      keymap:
+        capslock: capslock
+
+    - modifiers: ['leftshift']
+      keymap:
+        backspace: backspace
+        sysrq: sysrq
