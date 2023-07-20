@@ -62,6 +62,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'saadparwaiz1/cmp_luasnip'
+"Plug 'davidhalter/jedi-vim'
 
 Plug 'Pocco81/auto-save.nvim'
 Plug 'nvim-lua/plenary.nvim'

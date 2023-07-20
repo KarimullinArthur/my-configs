@@ -233,5 +233,10 @@ bindsym Print exec grim ~/img/screen-"$(date +%s)".png
 bindsym Alt+Print exec grim -g "$(slurp)" ~/img/screenshots/screen-"$(date +%s)".png
 
 # Sleep
-bindsym $mod + Shift + s exec swaylock -c '000001' 
+#bindsym $mod + Shift + s exec swaylock -c '000001' 
 #bindsym $mod +  execswaymsg "output * dpms on" 
+
+# Bright
+
+bindsym --locked XF86MonBrightnessUp exec light -T 1.4
+bindsym --locked XF86MonBrightnessDown exec light -T 0.72
