@@ -18,6 +18,8 @@ antigen apply If you come from bash you might have to change your $PATH.
 #export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=~/bin:/sbin:/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/games:~/.local/bin
 export PATH=${PATH}:$(find ~/bin -type d | tr '\n' ':' | sed 's/:$//')
+
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 # General
 set -o vi 
 

@@ -240,3 +240,29 @@ bindsym Alt+Print exec grim -g "$(slurp)" ~/img/screenshots/screen-"$(date +%s)"
 
 bindsym --locked XF86MonBrightnessUp exec light -T 1.4
 bindsym --locked XF86MonBrightnessDown exec light -T 0.72
+
+# ScreenLock
+
+### Idle lock
+## - Lock your screen after 300 seconds of inactivity
+## - Then turn off your displays after another 300 seconds
+## - Turn your screens back on when resumed
+## - Also lock your screen before your computer goes to sleep
+
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000 -k' \
+         timeout 600 'swaymsg "output * dpms off"' \
+         resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000 -k'
+
+
+### ~/.config/sway/config.d/80-lock.conf
+
+### Manual lock
+## - Mod + Ctrl + l to lock the screen immediately
+## - In 10 sec also switch the screen off
+set $lockman exec bash ~/.config/sway/swaylock/lockman.sh
+bindsym $mod+Ctrl+l exec $lockman
+
+# Toggle TouchPad
+bindsym XF86LaunchA input type:touchpad events toggle enabled disabled
