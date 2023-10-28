@@ -18,6 +18,7 @@ set shiftwidth=2
 set iskeyword-=_
 
 au Filetype python setl et ts=4 sw=4
+au Filetype cs setl ts=4 sw=4
 au Filetype html setl ts=2 sw=2
 
 nnoremap ,<space> :nohlsearch<CR>
@@ -28,6 +29,7 @@ imap <F5> <Esc>:w<CR>:term python3 %<CR>
 nmap <F5> <Esc>:w<CR>:term python3 %<CR>
 
 cnoreabbrev pyt :term python3 %
+cnoreabbrev dn :term dotnet run %
 
 
 " йцукен
