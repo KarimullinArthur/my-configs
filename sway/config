@@ -229,7 +229,7 @@ default_border pixel 0
 default_floating_border pixel 0
 
 # Screenshot
-bindsym $mod+Shift+p exec grim -g "$(slurp)" ~/img/screen-"$(date +%s)".png
+bindsym $mod+Shift+p exec grim -g "$(slurp)" ~/img/screenshots/screen-"$(date +%s)".png
 bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
 
 
@@ -268,3 +268,6 @@ bindsym $mod+Ctrl+l exec $lockman
 # Toggle TouchPad
 #(XF86LaunchA = Fn+F11)
 bindsym XF86LaunchA input type:touchpad events toggle enabled disabled
+
+# Notification deamon
+# exec --no-startup-id /home/arthur/bin/dunst
