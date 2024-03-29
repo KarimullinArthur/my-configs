@@ -11,9 +11,9 @@ set expandtab
 set autoindent
 
 set smartindent
-set tabstop=2
+set tabstop=4
 set expandtab
-set shiftwidth=2
+set shiftwidth=4
 
 set iskeyword-=_
 
@@ -74,6 +74,8 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'stevearc/aerial.nvim'
 Plug 'scrooloose/nerdtree'
 Plug 'michaelb/sniprun'
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
 
 Plug 'echasnovski/mini.nvim'
 Plug 'ryanoasis/vim-devicons'
@@ -119,10 +121,6 @@ function! s:OpenFileOrExplorer(...)
     endif
     return 1
 endfunction
-
-" Auto commands to handle OS commandline arguments
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc()==1 && !exists('s:std_in') | if <SID>OpenFileOrExplorer(argv()[0]) | wincmd p | enew | wincmd p | endif | endif
 
 " Command to call the OpenFileOrExplorer function.
 command! -n=? -complete=file -bar Edit :call <SID>OpenFileOrExplorer('<args>')
