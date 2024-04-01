@@ -25,10 +25,9 @@ nnoremap ,<space> :nohlsearch<CR>
 autocmd FileType python set colorcolumn=79
 
 " Хоткеи для петухона
-imap <F5> <Esc>:w<CR>:term python3 %<CR>
-nmap <F5> <Esc>:w<CR>:term python3 %<CR>
+nnoremap <F5> :w<CR>:tabe term://.//python3 %<CR>
 
-cnoreabbrev pyt :term python3 %
+cnoreabbrev pyt :tabe term://.//python3 %
 cnoreabbrev dn :term dotnet run %
 
 
@@ -66,15 +65,14 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'saadparwaiz1/cmp_luasnip'
-"Plug 'davidhalter/jedi-vim'
 
 Plug 'Pocco81/auto-save.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'stevearc/aerial.nvim'
 Plug 'scrooloose/nerdtree'
 Plug 'michaelb/sniprun'
-Plug 'jiangmiao/auto-pairs'
+Plug 'KarimullinArthur/auto-pairs'
 Plug 'alvan/vim-closetag'
 
 Plug 'echasnovski/mini.nvim'
@@ -121,6 +119,10 @@ function! s:OpenFileOrExplorer(...)
     endif
     return 1
 endfunction
+
+if !exists('g:AutoPairsShortcutToggle')
+  let g:AutoPairsShortcutToggle = '<M-,>'
+end
 
 " Command to call the OpenFileOrExplorer function.
 command! -n=? -complete=file -bar Edit :call <SID>OpenFileOrExplorer('<args>')
