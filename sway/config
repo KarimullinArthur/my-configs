@@ -24,7 +24,7 @@ include /etc/sway/config-vars.d/*
 
 ### Output configuration
 
-output '*' bg `find ~/img/wallpapers -type f | shuf -n 1` fill
+output '*' bg `find ~/img/wallpaper -type f | shuf -n 1` fill
 
 #
 # Example configuration:
@@ -229,7 +229,7 @@ default_border pixel 0
 default_floating_border pixel 0
 
 # Screenshot
-bindsym $mod+Shift+p exec grim -g "$(slurp)" ~/img/screenshots/screen-"$(date +'%Y-%m-%dT%H:%M:%S')".png
+bindsym $mod+Shift+p exec grim -g "$(slurp)" ~/img/screenshot/screen-"$(date +'%Y-%m-%dT%H:%M:%S')".png
 bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
 
 
@@ -270,4 +270,5 @@ bindsym $mod+Ctrl+l exec $lockman
 bindsym XF86LaunchA input type:touchpad events toggle enabled disabled
 
 # Notification deamon
+exec mako
 # exec --no-startup-id /home/arthur/bin/dunst

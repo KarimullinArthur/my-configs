@@ -1,6 +1,6 @@
 #!/bin/bash
 
-path=~/.config/myConfigs #Path to local repo
+path=~/.config/my-configs #Path to local repo
 
 cd $path 
 

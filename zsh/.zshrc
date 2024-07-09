@@ -1,4 +1,4 @@
-source ~/antigen.zsh
+source ~/.antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -17,7 +17,7 @@ antigen theme agnoster
 antigen apply If you come from bash you might have to change your $PATH.
 #export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=~/bin:/sbin:/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/games:~/.local/bin:~/.cargo/bin
-export PATH=${PATH}:$(find ~/bin -type d | tr '\n' ':' | sed 's/:$//')
+export PATH=${PATH}:$(find ~/.bin -type d | tr '\n' ':' | sed 's/:$//')
 
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 # General
@@ -27,4 +27,4 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 
 # Fun
-figlet "Linux is POWER" | lolcat
+figlet "I use Arch btw" | lolcat
