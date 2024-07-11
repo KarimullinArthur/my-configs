@@ -65,7 +65,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin('~/.vim/plugged')
 Plug 'williamboman/mason.nvim'
-Plug 'williamboman/nvim-lsp-installer'
+"Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'L3MON4D3/LuaSnip'
 

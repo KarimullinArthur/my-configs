@@ -239,8 +239,8 @@ bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
 
 # Bright
 
-bindsym --locked XF86MonBrightnessUp exec light -T 1.4
-bindsym --locked XF86MonBrightnessDown exec light -T 0.72
+bindsym --locked XF86MonBrightnessUp exec --no-startup-id brightnessctl s 10%+
+bindsym --locked XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
 
 # ScreenLock
 
