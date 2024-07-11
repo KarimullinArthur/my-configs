@@ -1,4 +1,4 @@
- * { 
+ * {  
     all: unset;
     border: none;
     border-radius: 4;
@@ -71,6 +71,8 @@ tooltip label {
 #mode,
 #custom-notification,
 #sway-scratchpad,
+#battery,
+#network,
 #mpd {
     padding: 0 10px;
     margin: 6px 3px;
@@ -181,7 +183,12 @@ label:focus {
     background: rgba(0, 0, 0, 0.2);
 }
 
-#sway-scratchpad {
-    background-color: #50fa7b;
-    color: #282a36;
+#battery {
+    background-color: #3c3836;
+    color: #f2e5bc;
+}
+
+#network {
+    background-color: #076678;
+    color: #f9f5d7;
 }

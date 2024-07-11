@@ -10,4 +10,4 @@ read comment
 git add . 
 git commit -m "Обновляем конфиги $comment"
 git push origin master
-git push disroot master
+#git push disroot master
