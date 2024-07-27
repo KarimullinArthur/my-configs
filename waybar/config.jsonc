@@ -1,3 +1,4 @@
+// -*- mode: jsonc -*-
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
@@ -7,8 +8,8 @@
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
     "modules-center": [
       "clock",
-      ],
-    "modules-right": ["pulseaudio", "cpu", "memory", "keyboard-state", "network", "battery", "sway/language", "tray"],
+    ],
+    "modules-right": ["pulseaudio", "cpu", "memory", "keyboard-state", "network", "battery#bat2", "sway/language", "tray"],
 
     "keyboard-state": {
         "numlock": true,
@@ -35,14 +36,17 @@
     },
     "clock": {
         "format": "{:%I:%M %p}",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": false,
+        "interval": 1
     },
     "memory": {
-        "format": "{}% RAM"
+        "format": "{}% RAM",
+        "interval": 1
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -61,16 +65,18 @@
             "default": ["", "", ""]
         },
     },
-    "battery": {
-        "bat": "BAT1",
-        "interval": 60,
+    "battery#bat2": {
         "states": {
+            // "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
         "format-icons": ["", "", "", "", ""],
-        "max-length": 25
+        "interval": 1
     },
     "network": {
       "interface": "wlan0",
@@ -82,6 +88,7 @@
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
       "tooltip-format-ethernet": "{ifname} ",
       "tooltip-format-disconnected": "Disconnected",
+      "format-alt": "{ifname}: {ipaddr}/{cidr}",
       "max-length": 50
     }
 }

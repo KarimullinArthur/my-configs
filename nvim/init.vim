@@ -30,6 +30,7 @@ nnoremap <F5> :w<CR>:tabe term://.//python3 %<CR>
 cnoreabbrev pyt :tabe term://.//python3 %
 cnoreabbrev dn :term dotnet run %
 
+autocmd TabClosed * tabprevious
 
 " йцукен
 set keymap=russian-jcukenwin
@@ -41,7 +42,6 @@ set iminsert=0 " Set defualt qwerty
 nnoremap <silent> tn <Cmd>:tabnext<CR>
 nnoremap <silent> tp <Cmd>:tabprevious <CR>
 
-set guifont=AgaveMono\ Nerd\ Font\ 11
 
 " Плигины
 
@@ -65,8 +65,18 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin('~/.vim/plugged')
 Plug 'williamboman/mason.nvim'
-"Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
+Plug 'mason-lspconfig.nvim'
+
+"Plug 'rcarriga/nvim-dap-ui'
+Plug 'mfussenegger/nvim-dap'
+Plug 'jay-babu/mason-nvim-dap.nvim'
+Plug 'mfussenegger/nvim-dap-python'
+
+Plug 'mfussenegger/nvim-lint'
+Plug 'nvimtools/none-ls-extras.nvim'
+Plug 'nvimtools/none-ls.nvim'
+"Plug 'mhartington/formatter.nvim'
 Plug 'L3MON4D3/LuaSnip'
 
 Plug 'hrsh7th/nvim-cmp'
@@ -155,6 +165,7 @@ set completeopt=menu,menuone,noselect
 
 " LSP
 source ~/.config/nvim/lsp.lua
+source ~/.config/nvim/pyright.lua
 
 " Telescope
 source ~/.config/nvim/telescope.lua

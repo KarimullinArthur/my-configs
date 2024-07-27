@@ -13,8 +13,13 @@ set $left h
 set $down j
 set $up k
 set $right l
+
+set $ru_left 0x6d2
+set $ru_down 0x6cf
+set $ru_up 0x6cc
+set $ru_right 0x6c4
 # Your preferred terminal emulator
-set $term foot
+set $term alacritty
 # Your preferred application launcher
 set $menu rofi -show run
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -68,6 +73,7 @@ output '*' bg `find ~/img/wallpaper -type f | shuf -n 1` fill
 
     # Kill focused window
     bindsym $mod+Shift+q kill
+    bindsym $mod+Shift+0x6ca kill
 
     # Start your launcher
 
@@ -93,6 +99,13 @@ output '*' bg `find ~/img/wallpaper -type f | shuf -n 1` fill
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
+
+
+    bindsym $mod+$ru_left focus left
+    bindsym $mod+$ru_down focus down
+    bindsym $mod+$ru_up focus up
+    bindsym $mod+$ru_right focus right
+
     # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -214,7 +227,7 @@ input "type:keyboard" {
 
 # Autostart
 
-exec foot
+exec $term
 
 # Sound
 
@@ -225,8 +238,17 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 # Border
 bindsym $mod+t border toggle
 
-default_border pixel 0  
-default_floating_border pixel 0
+default_border pixel 0  #default_floating_border pixel 0
+
+default_border none
+
+# Title
+#title_format %app_id
+default_floating_border none
+title_align center
+font pango:monospace 9.5
+titlebar_padding 1
+titlebar_border_thickness 0
 
 # Screenshot
 bindsym $mod+Shift+p exec grim -g "$(slurp)" ~/img/screenshot/screen-"$(date +'%Y-%m-%dT%H:%M:%S')".png

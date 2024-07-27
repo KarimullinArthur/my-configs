@@ -1,4 +1,4 @@
- * {  
+  * {  
     all: unset;
     border: none;
     border-radius: 4;
@@ -191,4 +191,8 @@ label:focus {
 #network {
     background-color: #076678;
     color: #f9f5d7;
+}
+
+#network.disconnected {
+    background-color: #f53c3c;
 }
