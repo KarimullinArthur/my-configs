@@ -66,7 +66,8 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin('~/.vim/plugged')
 Plug 'williamboman/mason.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'mason-lspconfig.nvim'
+" Plug 'mason-lspconfig.nvim'
+" Plug 'WhoIsSethDaniel/mason-tool-installer.nvim'
 
 "Plug 'rcarriga/nvim-dap-ui'
 Plug 'mfussenegger/nvim-dap'
@@ -74,10 +75,11 @@ Plug 'jay-babu/mason-nvim-dap.nvim'
 Plug 'mfussenegger/nvim-dap-python'
 
 Plug 'mfussenegger/nvim-lint'
-Plug 'nvimtools/none-ls-extras.nvim'
-Plug 'nvimtools/none-ls.nvim'
-"Plug 'mhartington/formatter.nvim'
+"Plug 'nvimtools/none-ls-extras.nvim'
+"Plug 'nvimtools/none-ls.nvim'
+" Plug 'mhartington/formatter.nvim'
 Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -87,7 +89,6 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-nvim-lua'
-Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'saadparwaiz1/cmp_luasnip'
 
 Plug 'AckslD/muren.nvim'
@@ -165,7 +166,7 @@ set completeopt=menu,menuone,noselect
 
 " LSP
 source ~/.config/nvim/lsp.lua
-source ~/.config/nvim/pyright.lua
+" source ~/.config/nvim/pyright.lua
 
 " Telescope
 source ~/.config/nvim/telescope.lua
