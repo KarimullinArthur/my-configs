@@ -1,11 +1,11 @@
-local header_art2 = 
+local header_art2 =
 [[
  ╭╮╭┬─╮╭─╮┬  ┬┬╭┬╮
  │││├┤ │ │╰┐┌╯││││
  ╯╰╯╰─╯╰─╯ ╰╯ ┴┴ ┴
 ]]
 
-local header_art = 
+local header_art =
 [[
  ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗
  ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║
@@ -18,10 +18,25 @@ local header_art =
 -- using the mini plugins
 
 -- require("mason").setup()
-require("mason-nvim-dap").setup()
+-- require("mason-nvim-dap").setup()
 
 require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
 require('dap-python').test_runner = 'pytest'
+--
+
+require("dapui").setup()
+
+require("neotest").setup({
+  adapters = {
+    require("neotest-python")({
+      dap = { justMyCode = false },
+    }),
+--    require("neotest-plenary"),
+--    require("neotest-vim-test")({
+--      ignore_file_types = { "python", "vim", "lua" },
+--    }),
+  },
+})
 
 
 

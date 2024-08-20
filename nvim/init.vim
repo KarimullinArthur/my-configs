@@ -28,7 +28,7 @@ autocmd FileType python set colorcolumn=79
 nnoremap <F5> :w<CR>:tabe term://.//python3 %<CR>
 
 cnoreabbrev pyt :tabe term://.//python3 %
-cnoreabbrev dn :term dotnet run %
+" cnoreabbrev dn :term dotnet run %
 
 autocmd TabClosed * tabprevious
 
@@ -41,6 +41,19 @@ set iminsert=0 " Set defualt qwerty
 " tabs
 nnoremap <silent> tn <Cmd>:tabnext<CR>
 nnoremap <silent> tp <Cmd>:tabprevious <CR>
+
+" Commenting blocks of code.
+augroup commenting_blocks_of_code
+  autocmd!
+  autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+  autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+  autocmd FileType conf,fstab       let b:comment_leader = '# '
+  autocmd FileType tex              let b:comment_leader = '% '
+  autocmd FileType mail             let b:comment_leader = '> '
+  autocmd FileType vim              let b:comment_leader = '" '
+augroup END
+noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
 
 " Плигины
@@ -70,9 +83,20 @@ Plug 'neovim/nvim-lspconfig'
 " Plug 'WhoIsSethDaniel/mason-tool-installer.nvim'
 
 "Plug 'rcarriga/nvim-dap-ui'
+"Plug 'mfussenegger/nvim-dap'
+
 Plug 'mfussenegger/nvim-dap'
-Plug 'jay-babu/mason-nvim-dap.nvim'
+Plug 'nvim-neotest/nvim-nio'
+Plug 'rcarriga/nvim-dap-ui'
 Plug 'mfussenegger/nvim-dap-python'
+
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-neotest/nvim-nio'
+Plug 'nvim-neotest/neotest-python'
+Plug 'nvim-neotest/neotest'
 
 Plug 'mfussenegger/nvim-lint'
 "Plug 'nvimtools/none-ls-extras.nvim'
@@ -91,6 +115,8 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'saadparwaiz1/cmp_luasnip'
 
+Plug 'nanotee/sqls.nvim'
+
 Plug 'AckslD/muren.nvim'
 Plug 'Pocco81/auto-save.nvim'
 Plug 'gennaro-tedesco/nvim-jqx'
@@ -104,6 +130,7 @@ Plug 'alvan/vim-closetag'
 Plug 'echasnovski/mini.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'morhetz/gruvbox'
 call plug#end()
 
@@ -111,6 +138,8 @@ call plug#end()
 
 let g:gruvbox_italic = 1
 colorscheme gruvbox
+
+set guifont=DroidSansMono\ Nerd\ Font\ 11
 
 set cursorline
 set cursorlineopt=number
@@ -129,6 +158,17 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
+
+
+"nnoremap <silent> <leader>dn :lua require('dap-python').test_method()<CR>
+"nnoremap <silent> <leader>df :lua require('dap-python').test_class()<CR>
+"vnoremap <silent> <leader>ds <ESC>:lua require('dap-python').debug_selection()<CR>
+
+
+vnoremap <silent> <leader>dn <ESC> :DapToggleBreakpoint<CR>
+nnoremap bp <cmd>DapToggleBreakpoint<cr>
+nnoremap db <cmd>lua require("dapui").toggle()<cr>
+
 
 " Function to open the file or NERDTree or netrw.
 "   Returns: 1 if either file explorer was opened; otherwise, 0.
@@ -166,6 +206,7 @@ set completeopt=menu,menuone,noselect
 
 " LSP
 source ~/.config/nvim/lsp.lua
+"autocmd VimEnter LspStop pylsp
 " source ~/.config/nvim/pyright.lua
 
 " Telescope
