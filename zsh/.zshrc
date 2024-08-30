@@ -42,6 +42,8 @@ eval "$(pyenv init -)"
 
 eval "$(pyenv virtualenv-init -)"
 
+#alias lvim='nvim -u ~/.config/lvim/init.lua'
+alias lvim="NVIM_APPNAME=lazyvim nvim"
 
 # Fun
 figlet "I use Arch btw" | lolcat

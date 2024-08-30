@@ -21,7 +21,7 @@ set $ru_right 0x6c4
 # Your preferred terminal emulator
 set $term alacritty
 # Your preferred application launcher
-set $menu rofi -show run
+set $menu ~/.config/rofi/launchers/type-1/launcher.sh
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu exec $term -e env GLYPH_COMMAND="" GLYPH_DESKTOP="" GLYPH_PROMPT="? " sway-launcher
