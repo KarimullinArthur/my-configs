@@ -6,6 +6,7 @@
 KBCT_BIN_URL="https://github.com/samvel1024/kbct/releases/download/v0.1.0/kbct-x86_64.AppImage"
 KBCT_CONFIG_URL="https://gist.githubusercontent.com/KarimullinArthur/28434b2c7a392480d64221b79c48449c/raw/5a6db5dfd0f5bfccca666dd0ebe39b2079f8443c/kbct.yaml"
 KBCT_DEAMON_URL="https://gist.githubusercontent.com/KarimullinArthur/28434b2c7a392480d64221b79c48449c/raw/5a6db5dfd0f5bfccca666dd0ebe39b2079f8443c/kbct.service"
+UINPUT_DEAMON_URL="https://gist.githubusercontent.com/KarimullinArthur/28434b2c7a392480d64221b79c48449c/raw/659a25ded634e437e8c010ae42b926fdec3b4dd7/uinput.service"
 
 RED='\e[31m'
 GREEN='\e[32m'
@@ -32,8 +33,9 @@ wget $KBCT_BIN_URL && mv kbct-x86_64.AppImage /usr/bin/kbct
 chmod +x /usr/bin/kbct
 modprobe uinput
 
-wget $KBCT_DEAMON_URL && mv ./kbct.service /etc/systemd/system/kbct.service
-sudo wget $KBCT_CONFIG_URL && mv ./kbct.yaml /home/$USERNAME/.config/kbct.yaml
+sudo wget $KBCT_DEAMON_URL   && mv ./kbct.service /etc/systemd/system/kbct.service
+sudo wget $KBCT_CONFIG_URL   && mv ./kbct.yaml /home/$USERNAME/.config/kbct.yaml
+sudo wget $UINPUT_DEAMON_URL && mv ./uinput.service /etc/systemd/system/uinput.service
 
 systemctl daemon-reload
 systemctl enable kbct
