@@ -39,6 +39,7 @@ sudo wget $UINPUT_DEAMON_URL && mv ./uinput.service /etc/systemd/system/uinput.s
 
 systemctl daemon-reload
 systemctl enable kbct
+systemctl enable uinput
 systemctl start kbct
 
 echo -e "${GREEN}Kbct is seccesfull installed${RESET}"
