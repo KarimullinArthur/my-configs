@@ -19,7 +19,8 @@ set $ru_down 0x6cf
 set $ru_up 0x6cc
 set $ru_right 0x6c4
 # Your preferred terminal emulator
-set $term alacritty
+set $term alacritty 
+
 # Your preferred application launcher
 
 set $menu rofi -show run
@@ -300,3 +301,27 @@ bindsym XF86LaunchA input type:touchpad events toggle enabled disabled
 # Notification deamon
 exec mako
 # exec --no-startup-id /home/arthur/bin/dunst
+# Зеленая тема для tabbed layout
+client.focused          #89b482 #89b482 #1e1e1e #a6e3a1 #1e1e1e
+client.focused_inactive #3a4c3b #3a4c3b #d8f5cd #a9bfa3 #1e1e1e
+client.unfocused        #2d3530 #2d3530 #a9bfa3 #a9bfa3 #1e1e1e
+client.urgent           #a6e3a1 #a6e3a1 #1e1e1e #ffffff #1e1e1e
+
+# Границы и заголовки
+default_border pixel 2
+default_floating_border normal
+
+titlebar_padding 4
+title_align center
+
+# Отступчики для воздуха
+gaps inner 5
+gaps outer 8
+
+# Стиль окон по умолчанию
+default_border pixel 2
+default_floating_border normal
+
+# Красота в titlebar (если не скрыт)
+titlebar_padding 2
+title_align center
