@@ -3,17 +3,23 @@ require('lspconfig')['pyright'].setup{
     flags = lsp_flags,
 }
 
-require'lspconfig'.pylsp.setup{
-  autostart = false,
-  settings = {
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          ignore = {'E501'}
-        }
-      }
-    }
-  }
+local lspconfig = require("lspconfig")
+local util = require("lspconfig.util")
+
+lspconfig.biome = {
+  default_config = {
+    cmd = { "biome", "lsp-proxy" },
+    filetypes = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "json",
+      "jsonc",
+    },
+    root_dir = util.root_pattern("biome.json", ".git"),
+    single_file_support = true,
+  },
 }
 
 vim.api.nvim_create_autocmd('FileType', {
@@ -25,6 +31,7 @@ vim.api.nvim_create_autocmd('FileType', {
     })
   end,
 })
+
 
 require('lspconfig').yamlls.setup {
   settings = {

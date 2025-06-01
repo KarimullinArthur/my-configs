@@ -1,8 +1,8 @@
 [window]
-padding = { x = 5, y = 5 }
-dynamic_padding = true
-decorations = "Full"
-opacity = 0.95
+#padding = { x = 5, y = 5 }
+#dynamic_padding = true
+#decorations = "Full"
+#opacity = 0.95
 
 [font]
 normal = { family = "JetBrains Mono", style = "Regular" }

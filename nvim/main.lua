@@ -190,3 +190,15 @@ local DEFAULT_SETTINGS = {
         download_url_template = "https://github.com/%s/releases/download/%s/%s",
     },
 }
+
+
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Показать диагностику" })
+
+
+--vim.o.updatetime = 250
+--vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+--  callback = function()
+--    vim.diagnostic.open_float(nil, { focus = false })
+--  end,
+--})
+
