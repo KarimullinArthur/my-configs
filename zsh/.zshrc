@@ -88,6 +88,7 @@ plugins=(
     pass
     zsh-syntax-highlighting
     zsh-autosuggestions
+    nix-shell
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -124,6 +125,7 @@ source $ZSH/oh-my-zsh.sh
 #
 
 alias todod="todo write today"
+alias info="info --vi-keys"
 
 # Alt + Enter
 bindkey '\e\r' autosuggest-accept
