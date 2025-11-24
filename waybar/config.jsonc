@@ -9,7 +9,7 @@
     "modules-center": [
       "clock",
     ],
-    "modules-right": ["pulseaudio", "cpu", "memory", "keyboard-state", "network", "battery#bat2", "sway/language", "tray"],
+    "modules-right": ["pulseaudio", "cpu", "memory", "network", "battery#bat2", "sway/language", "tray"],
 
     "keyboard-state": {
         "numlock": true,
