@@ -297,6 +297,7 @@ bindsym $mod+Ctrl+l exec $lockman
 # Toggle TouchPad
 #(XF86LaunchA = Fn+F11)
 bindsym XF86LaunchA input type:touchpad events toggle enabled disabled
+input type:touchpad events disabled
 
 # Notification deamon
 exec mako
